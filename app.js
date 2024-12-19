@@ -3,6 +3,7 @@ const createError = require('http-errors')
 const path = require('path')
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
+let models = require('./models');
 
 const indexRouter = require('./routes/index')
 const usersRouter = require('./routes/user')
@@ -28,4 +29,8 @@ app.use((req, res, next) => {
     next(createError(404))
 })
 
-app.listen(8000, () => console.log('server is running on PORT: 8000'))
+// module.exports = app
+
+return models.sequelize.sync().then(result => {
+  app.listen(8000, () => console.log('server is running on PORT: 8000'))
+})
