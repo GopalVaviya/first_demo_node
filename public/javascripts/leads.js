@@ -6,7 +6,6 @@ function deleteLead(leadId) {
         data: JSON.stringify({leadId}),
         type: 'POST',
         success: ((res) => {
-            // Replace follow button with unfollow.
             console.log("Result: ", res)
             $("#"+leadId).remove();
         }),

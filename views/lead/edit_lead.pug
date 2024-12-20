@@ -1,6 +1,11 @@
-extends ../layouts
-
-block content
-    form(action="/lead/"+ lead.id + "/edit",method="POST")
-        input(name="lead_email", type="email", placeholder="Enter your email", value=lead.email)
-        button(type="submit") save
+doctype html
+html(lang='en')
+    include ../common/head.pug
+    +head("Starter MVP")
+    body
+        div.container.mb-4 Edit your email
+            form(action="/lead/"+ lead.id + "/edit",method="POST")
+                input(name="lead_email", type="email", placeholder="Enter your email", value=lead.email)
+                button(type="submit") save
+    include ../common/footer.pug
+    +footer()
