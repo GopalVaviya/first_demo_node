@@ -31,6 +31,6 @@ app.use((req, res, next) => {
 
 // module.exports = app
 
-return models.sequelize.sync().then(result => {
+models.sequelize.sync().then(result => {
   app.listen(8000, () => console.log('server is running on PORT: 8000'))
 })

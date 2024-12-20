@@ -1,0 +1,7 @@
+extends layouts
+
+block content
+    h1= title
+    p 
+        span welcome to #{lead.email}
+        a(href="/lead/"+ lead.id + "/edit") Edit
